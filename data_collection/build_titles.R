@@ -1,4 +1,4 @@
-library(httr)
+source("utils.R")
 
 # Cleans up category names to ensure the Category:
 # prefix is added, and any spaces are replaced with
@@ -8,16 +8,6 @@ clean_cat <- function(category){
     category <- paste0("Category:", category)
   }
   return(gsub(x = category, pattern = " ", replacement = "_"))
-}
-
-# Handles the actual querying logic
-query_wp <- function(params, error_message){
-  result <- httr::GET("https://en.wikipedia.org/w/api.php",
-                      query = params)
-  if(result$status_code != 200){
-    stop(error_message)
-  }
-  return(httr::content(result))
 }
 
 # Loop a function to allow for the continue tokens to be used
