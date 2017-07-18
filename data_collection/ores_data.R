@@ -39,6 +39,20 @@ get_quality <- function(titles){
   # Grab revIDs
   rev_ids <- get_last_edit(titles)
   
+  if(length(rev_ids) > 50){
+    rev_ids <- split(rev_ids, ceiling(seq_along(rev_ids)/50))
+  } else {
+    rev_ids <- list(rev_ids)
+  }
+  
   # Get scores
-  scores <- ores::check_quality("enwiki", rev_ids)
+  scores <- do.call("rbind",
+                    lapply(rev_ids,
+                           function(x){
+                             return(ores::check_quality("enwiki", x))
+                           }
+                    )
+  )
+  
+  return(scores)
 }
