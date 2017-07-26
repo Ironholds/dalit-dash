@@ -7,7 +7,7 @@ system_run_date <- Sys.Date()
 
 # Check for and include data. If it's not there,
 # define everything cleanly
-if(!dir.exists("../data/")){
+if(!dir.exists("../data/") && file.exists("../data/dalit_data.RData")){
   dir.create("../data/")
   quality_data <- data.frame()
   count_data <- data.frame()
