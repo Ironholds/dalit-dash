@@ -100,5 +100,5 @@ get_titles <- function(category = "Dalit"){
     return(pages)
   })
   
-  return(unique(unlist(output)))
+  return(gsub(x = unique(unlist(output)), pattern = " ", replacement = "_"))
 }
