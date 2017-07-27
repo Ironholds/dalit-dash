@@ -34,10 +34,14 @@ get_last_edit <- function(titles){
   })))
 }
 
-get_quality <- function(titles){
+get_quality <- function(titles = NULL, edits = NULL){
   
   # Grab revIDs
-  rev_ids <- get_last_edit(titles)
+  if(is.null(edits)){
+    rev_ids <- get_last_edit(titles)
+  } else {
+    rev_ids <- edits
+  }
   
   if(length(rev_ids) > 50){
     rev_ids <- split(rev_ids, ceiling(seq_along(rev_ids)/50))
