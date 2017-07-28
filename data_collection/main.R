@@ -39,7 +39,7 @@ backlog_func <- function(start_date, end_date){
     
     # Calculate count data
     count_data <<- rbind(count_data,
-                         data.frame(date = system_run_date,
+                         data.frame(date = date,
                                     count_data = length(existing_pages)
                         )
     )
