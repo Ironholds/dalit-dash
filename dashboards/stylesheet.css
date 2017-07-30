@@ -1,0 +1,9 @@
+.dy-legend {
+  text-align: right;
+  padding-top: 15px;
+  padding-bottom: -15px;
+  padding-right: 5%;
+  padding-left: 5%;
+  width: 90%;
+  background-color: #ecf0f5;
+}
