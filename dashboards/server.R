@@ -11,7 +11,7 @@ quality_xts <- NULL
 renew_data <- function(){
   
   # Load data
-  load("../data/dalit_data.RData")
+  load(url("https://ironholds.org/projects/dalit_data.RData"))
   
   # Generate XTS objects
   dropped_count <- count_data[,2, drop=FALSE]

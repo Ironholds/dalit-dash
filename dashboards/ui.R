@@ -1,6 +1,7 @@
 library(shinydashboard)
 library(dygraphs)
-
+library(shiny)
+library(markdown)
 
 dashboardPage(
   dashboardHeader(title = "Dalit History Month"),

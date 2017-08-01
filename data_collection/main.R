@@ -8,12 +8,12 @@ system_run_date <- Sys.Date()
 
 # Check for and include data. If it's not there,
 # define everything cleanly
-if(!dir.exists("../data/") | !file.exists("../data/dalit_data.RData")){
+if(!dir.exists("../data/") | !file.exists("../public_html/projects/dalit_data.RData")){
   dir.create("../data/", showWarnings = FALSE)
   quality_data <- data.frame()
   count_data <- data.frame()
 } else {
-  load(file = "../data/dalit_data.RData")
+  load(file = "../public_html/projects/dalit_data.RData")
 }
 
 # For handling data backlogs
@@ -55,7 +55,7 @@ backlog_func <- function(start_date, end_date){
   }, titles = titles)
   
   # Write out files and quit
-  save(quality_data, count_data, file = "../data/dalit_data.RData")
+  save(quality_data, count_data, file = "../public_html/projects/dalit_data.RData")
   
   return(invisible())
 }
@@ -85,6 +85,6 @@ day_func <- function(start_date = system_run_date){
   quality_data <- rbind(quality_data, aggregate_scores)
   
   # Write out files and quit
-  save(quality_data, count_data, file = "../data/dalit_data.RData")
+  save(quality_data, count_data, file = "../public_html/projects/dalit_data.RData")
 }
 
