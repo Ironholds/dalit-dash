@@ -1,6 +1,6 @@
 # Article quality
 
-This graph shows the number of articles in the English-language Wikipedia category "Dalit" (and all the categories that are a member of it) in each class of quality.
+This tracker shows the changes to the Wikipedia article quality markers around `[[Category: Dalit]]` starting from the [Dalit History Month efforts](http://www.sucheta.net/whoseknowledge/dalit-history-month/process.pdf), starting April 2017.
 
 By quality, we mean how the English-language Wikipedia's editors assess it - actual quality evaluations may or may not bear any resemblance to readers' realities. Categories are:
 
